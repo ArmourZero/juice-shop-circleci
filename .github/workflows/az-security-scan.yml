@@ -23,5 +23,5 @@
         - name: ArmourZero Security Test (Pre)
           run: |
             npm install
-            docker run -v "$(pwd):/app/wrk" --rm armourzero/pipe-scan:latest --apikey="$AZ_API_KEY" --projectkey="$PROJECT_KEY" --branch="$BRANCH_NAME" --repo="$GITHUB_REPOSITORY" --runEnv="demo"
+            docker run -v "$GITHUB_WORKSPACE:/app/wrk" --rm armourzero/pipe-scan:latest --apikey="$AZ_API_KEY" --projectkey="$PROJECT_KEY" --branch="$BRANCH_NAME" --repo="$GITHUB_REPOSITORY" --runEnv="demo"
           continue-on-error: true
